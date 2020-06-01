@@ -1,11 +1,6 @@
-import {html, render, TemplateResult} from 'lit-html';
+import {render, svg} from 'lit-html';
 
-function sayHello(name: string): TemplateResult {
-  return html`<h1>Hello ${name}</h1>`;
-}
+const circle = svg`<circle cx="100" cy="100" r="80" stroke="black" stroke-width="3" fill="red"/>`;
 
-render(sayHello('world'), document.body);
+render(circle, document.getElementById('svg')!);
 
-setTimeout(() => {
-  render(sayHello('lit-html'), document.body);
-}, 1000)
